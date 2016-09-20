@@ -25,6 +25,7 @@ public class MyTest {
 		user.setRoleName("系统管理员");
 //		logger.info("insert user="+user);
 //		userService.insert(user);
+//		mytest
 		User u = userService.login(user);
 		logger.info("login user="+u);
 		
