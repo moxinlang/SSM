@@ -23,6 +23,8 @@ public class MyTest {
 		user.setUserName("moxinlang");
 		user.setPassword("11111");
 		user.setRoleName("系统管理员");
+//		logger.info("insert user="+user);
+//		userService.insert(user);
 		User u = userService.login(user);
 		logger.info("login user="+u);
 		
