@@ -54,7 +54,7 @@
    <thead>
    	<tr>
    		<th field="id" width="50">编号</th>
-   		<th field="linkName" width="100" editor="{type:'validatebox',options:{required:true}}">客户姓名</th>
+   		<th field="linkname" width="100" editor="{type:'validatebox',options:{required:true}}">客户姓名</th>
    		<th field="sex" width="50" editor="{type:'combobox',
    			options:{
    				valueField:'id',
@@ -65,7 +65,7 @@
    				panelHeight:'auto'
    		    }}">性别</th>
    		<th field="zhiwei" width="100" editor="{type:'validatebox',options:{required:true}}">职位</th>
-   		<th field="officePhone" width="100" editor="{type:'validatebox',options:{required:true}}">办公电话</th>
+   		<th field="officephone" width="100" editor="{type:'validatebox',options:{required:true}}">办公电话</th>
    		<th field="phone" width="100" editor="{type:'validatebox',options:{required:true}}">手机</th>
    	</tr>
    </thead>

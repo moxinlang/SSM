@@ -84,8 +84,8 @@
    <thead>
    	<tr>
    		<th field="id" width="50" align="center">编号</th>
-   		<th field="orderNo" width="100" align="center">订单号</th>
-   		<th field="orderDate" width="100" align="center">订购日期</th>
+   		<th field="orderno" width="100" align="center">订单号</th>
+   		<th field="orderdate" width="100" align="center">订购日期</th>
    		<th field="address" width="200" align="center">送货地址</th>
    		<th field="state" width="50" align="center" formatter="formatState">状态</th>
    		<th field="a" width="50" align="center" formatter="formatAction">操作</th>
@@ -100,17 +100,17 @@
    	<table cellspacing="8px">
    		<tr>
    			<td>订单号：</td>
-   			<td><input type="text" id="orderNo" name="orderNo" readonly="readonly"/></td>
+   			<td><input type="text" id="orderno" name="orderno" readonly="readonly"/></td>
    			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
    			<td>订购日期</td>
-   			<td><input type="text" id="orderDate" name="orderDate" readonly="readonly" /></td>
+   			<td><input type="text" id="orderdate" name="orderdate" readonly="readonly" /></td>
    		</tr>
    		<tr>
    			<td>送货地址：</td>
    			<td><input type="text" id="address" name="address" readonly="readonly"/></td>
    			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
    			<td>总金额</td>
-   			<td><input type="text" id="totalMoney" name="totalMoney" readonly="readonly" /></td>
+   			<td><input type="text" id="totalmoney" name="totalmoney" readonly="readonly" /></td>
    		</tr>
    		<tr>
    			<td>状态：</td>
@@ -125,8 +125,8 @@
    <thead>
    	<tr>
    		<th field="id" width="50" align="center">编号</th>
-   		<th field="goodsName" width="150" align="center">商品名称</th>
-   		<th field="goodsNum" width="50" align="center">订购数量</th>
+   		<th field="goodsname" width="150" align="center">商品名称</th>
+   		<th field="goodsnum" width="50" align="center">订购数量</th>
    		<th field="unit" width="50" align="center">单位</th>
    		<th field="price" width="50" align="center" >单价(元)</th>
    		<th field="sum" width="80" align="center" >金额(元)</th>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ruoheng.dao.ContactMapper" >
+  <resultMap id="BaseResultMap" type="com.ruoheng.model.Contact" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cusId" property="cusid" jdbcType="INTEGER" />
+    <result column="contactTime" property="contacttime" jdbcType="DATE" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="overview" property="overview" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, cusId, contactTime, address, overview
+  </sql>
+  
+  <select id="find" parameterType="Map" resultMap="BaseResultMap">
+		select * from t_customer_contact
+		<where>
+			<if test="cusid!=null and cusid!='' ">
+				and cusid = #{cusid}
+			</if>
+		</where>
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_customer_contact
+		<where>
+			<if test="cusid!=null and cusid!='' ">
+				and cusid = #{cusid}
+			</if>
+		</where>
+	</select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_customer_contact
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_customer_contact
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ruoheng.model.Contact" >
+    insert into t_customer_contact (id, cusid, contactTime, 
+      address, overview)
+    values (#{id,jdbcType=INTEGER}, #{cusid,jdbcType=INTEGER}, #{contacttime,jdbcType=DATE}, 
+      #{address,jdbcType=VARCHAR}, #{overview,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ruoheng.model.Contact" >
+    insert into t_customer_contact
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cusid != null" >
+        cusId,
+      </if>
+      <if test="contacttime != null" >
+        contactTime,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="overview != null" >
+        overview,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cusid != null" >
+        #{cusid,jdbcType=INTEGER},
+      </if>
+      <if test="contacttime != null" >
+        #{contacttime,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="overview != null" >
+        #{overview,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ruoheng.model.Contact" >
+    update t_customer_contact
+    <set >
+      <if test="cusid != null" >
+        cusId = #{cusid,jdbcType=INTEGER},
+      </if>
+      <if test="contacttime != null" >
+        contactTime = #{contacttime,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="overview != null" >
+        overview = #{overview,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ruoheng.model.Contact" >
+    update t_customer_contact
+    set cusId = #{cusid,jdbcType=INTEGER},
+      contactTime = #{contacttime,jdbcType=DATE},
+      address = #{address,jdbcType=VARCHAR},
+      overview = #{overview,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -16,7 +16,6 @@
  
 
  $(function(){
-	
 	 $.post("${pageContext.request.contextPath}/customer/findById.do",{id:'${param.cusId}'},function(result){
 		 $("#khno").val(result.khno);
 		 $("#name").val(result.name);
@@ -55,9 +54,9 @@
    <thead>
    	<tr>
    		<th field="id" width="50">编号</th>
-   		<th field="contactTime" width="100" editor="{type:'datebox',options:{required:true}}">交往时间</th>
+   		<th field="contacttime" width="100" editor="{type:'datebox',options:{required:true}}">交往时间</th>
    		<th field="address" width="200" editor="{type:'validatebox',options:{required:true}}">交往地址</th>
-   		<th field="overView" width="300" editor="{type:'validatebox',options:{required:true}}">概要</th>
+   		<th field="overview" width="300" editor="{type:'validatebox',options:{required:true}}">概要</th>
    	</tr>
    </thead>
  </table>

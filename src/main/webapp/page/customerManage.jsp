@@ -50,7 +50,7 @@
 					$.messager.alert("系统提示", "请选择客户地区！");
 					return false;
 				}
-				if ($("#cusManager").combobox("getValue") == "") {
+				if ($("#cusmanager").combobox("getValue") == "") {
 					$.messager.alert("系统提示", "请选择客户经理！");
 					return false;
 				}
@@ -86,15 +86,15 @@
 	function resetValue() {
 		$("#name").val("");
 		$("#area").combobox("setValue", "");
-		$("#cusManager").combobox("setValue", "");
+		$("#cusmanager").combobox("setValue", "");
 		$("#level").combobox("setValue", "");
 		$("#myd").combobox("setValue", "");
 		$("#xyd").combobox("setValue", "");
 		$("#address").val("");
-		$("#postCode").val("");
+		$("#postcode").val("");
 		$("#phone").val("");
 		$("#fax").val("");
-		$("#webSite").val("");
+		$("#website").val("");
 		$("#yyzzzch").val("");
 		$("#fr").val("");
 		$("#zczj").val("");
@@ -182,7 +182,7 @@
 				<th field="id" width="50" align="center" hidden="true">编号</th>
 				<th field="khno" width="150" align="center">客户编号</th>
 				<th field="name" width="200" align="center">客户名称</th>
-				<th field="cusManager" width="100" align="center">客户经理</th>
+				<th field="cusmanager" width="100" align="center">客户经理</th>
 				<th field="level" width="100" align="center">客户等级</th>
 				<th field="phone" width="100" align="center">联系电话</th>
 			</tr>
@@ -193,9 +193,9 @@
 				<th field="myd" width="80" align="center">客户满意度</th>
 				<th field="xyd" width="80" align="center">客户信用度</th>
 				<th field="address" width="200" align="center">客户地址</th>
-				<th field="postCode" width="100" align="center">邮政编码</th>
+				<th field="postcode" width="100" align="center">邮政编码</th>
 				<th field="fax" width="100" align="center">传真</th>
-				<th field="webSite" width="100" align="center">网址</th>
+				<th field="website" width="100" align="center">网址</th>
 				<th field="yyzzzch" width="100" align="center">营业执照注册号</th>
 				<th field="fr" width="100" align="center">法人</th>
 				<th field="zczj" width="100" align="center">注册资金(万元)</th>
@@ -261,8 +261,8 @@
 				</tr>
 				<tr>
 					<td>客户经理：</td>
-					<td><input class="easyui-combobox" id="cusManager"
-						name="cusManager"
+					<td><input class="easyui-combobox" id="cusmanager"
+						name="cusmanager"
 						data-options="panelHeight:'auto',editable:false,valueField:'trueName',textField:'trueName',url:'${pageContext.request.contextPath}/user/customerManagerComboList.do'" />&nbsp;<font
 						color="red">*</font></td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -296,7 +296,7 @@
 				</tr>
 				<tr>
 					<td>邮政编码：</td>
-					<td><input type="text" id="postCode" name="postCode"
+					<td><input type="text" id="postcode" name="postcode"
 						class="easyui-validatebox" required="true" />&nbsp;<font
 						color="red">*</font>
 					</td>
@@ -315,7 +315,7 @@
 					</td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					<td>网址：</td>
-					<td><input type="text" id="webSite" name="webSite"
+					<td><input type="text" id="website" name="website"
 						class="easyui-validatebox" required="true" />&nbsp;<font
 						color="red">*</font>
 					</td>
