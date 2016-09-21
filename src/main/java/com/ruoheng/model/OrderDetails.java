@@ -1,5 +1,7 @@
 package com.ruoheng.model;
 
+
+
 public class OrderDetails {
     private Integer id;
 
@@ -14,7 +16,9 @@ public class OrderDetails {
     private Float price;
 
     private Float sum;
-
+    
+    private Order order; // 所属订单
+    
     public Integer getId() {
         return id;
     }
@@ -70,4 +74,12 @@ public class OrderDetails {
     public void setSum(Float sum) {
         this.sum = sum;
     }
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 }
