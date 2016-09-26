@@ -94,6 +94,7 @@ public class DataDicController {
 		List<DataDic> dataDicList=dataDicService.findAll();
 		JSONArray rows=JSONArray.fromObject(dataDicList);
 		jsonArray.addAll(rows);
+		logger.debug("rows="+jsonArray.toString());
 		ResponseUtil.write(response, jsonArray);
 		return null;
 	}
@@ -108,6 +109,9 @@ public class DataDicController {
 	@RequestMapping("/save")
 	public String save(DataDic dataDic,HttpServletResponse response)throws Exception{
 		int resultTotal=0; // 操作的记录条数
+		
+		logger.debug("dataDic sava"+dataDic.toString());
+		
 		if(dataDic.getId()==null){
 			resultTotal=dataDicService.add(dataDic);
 		}else{
@@ -132,6 +136,7 @@ public class DataDicController {
 	 */
 	@RequestMapping("/delete")
 	public String delete(@RequestParam(value="ids")String ids,HttpServletResponse response)throws Exception{
+		logger.debug("delete in ids="+ids);
 		String []idsStr=ids.split(",");
 		for(int i=0;i<idsStr.length;i++){
 			dataDicService.delete(Integer.parseInt(idsStr[i]));

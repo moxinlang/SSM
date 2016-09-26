@@ -10,7 +10,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript">
- 
+
  var url;
 
  function searchUser(){
@@ -119,6 +119,7 @@
    	</tr>
    </thead>
  </table>
+ 
  <div id="tb">
  	<div>
  		<a href="javascript:openUserAddDialog()" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
@@ -141,7 +142,7 @@
    			<td><input type="text" id="userName" name="userName" class="easyui-validatebox" required="true"/>&nbsp;<font color="red">*</font></td>
    			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
    			<td>密码</td>
-   			<td><input type="text" id="password" name="password" class="easyui-validatebox" required="true"/>&nbsp;<font color="red">*</font></td>
+   			<td><input type="password" id="password" name="password" class="easyui-validatebox" required="true"/>&nbsp;<font color="red">*</font></td>
    		</tr>
    		<tr>
    			<td>真实姓名：</td>

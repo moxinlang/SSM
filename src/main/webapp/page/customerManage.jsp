@@ -145,8 +145,7 @@
 			$.messager.alert("系统提示", "请选择一条要管理的数据！");
 			return;
 		}
-		window.parent.openTab('客户联系人管理', 'linkManManage.jsp?cusId='
-				+ selectedRows[0].id, 'icon-lxr');
+		window.parent.openTab('客户联系人管理', 'linkManManage.jsp?cusId='+ selectedRows[0].id, 'icon-lxr');
 	}
 
 	function openCustomerContact() {

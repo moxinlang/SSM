@@ -30,4 +30,11 @@ public class DataDic {
     public void setDatadicvalue(String datadicvalue) {
         this.datadicvalue = datadicvalue == null ? null : datadicvalue.trim();
     }
+
+	@Override
+	public String toString() {
+		return "DataDic [id=" + id + ", datadicname=" + datadicname
+				+ ", datadicvalue=" + datadicvalue + "]";
+	}
+    
 }
